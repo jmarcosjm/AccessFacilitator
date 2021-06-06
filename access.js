@@ -9,9 +9,8 @@ onload = () => {
 }
 
 function inputHander(database, perms, schemas){
-    //database = database.replaceAll(" ", "")
-    perms = perms/*.replaceAll(" ", "")*/.split(",")
-    schemas = schemas/*.replaceAll(" ", "")*/.split(",")
+    perms = perms.split(",")
+    schemas = schemas.split(",")
     outputHandler(database,perms,schemas)
 }
 
