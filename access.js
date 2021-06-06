@@ -9,9 +9,9 @@ onload = () => {
 }
 
 function inputHander(database, perms, schemas){
-    database = database.replaceAll(" ", "")
-    perms = perms.replaceAll(" ", "").split(",")
-    schemas = schemas.replaceAll(" ", "").split(",")
+    //database = database.replaceAll(" ", "")
+    perms = perms/*.replaceAll(" ", "")*/.split(",")
+    schemas = schemas/*.replaceAll(" ", "")*/.split(",")
     outputHandler(database,perms,schemas)
 }
 
@@ -22,7 +22,7 @@ function outputHandler(database, perms, schemas){
         perms.forEach(perm => {
             screen.innerHTML += 
                 `
-                <p>PG_${perm.toUpperCase()}_${schema.toUpperCase()}_${database.toUpperCase()}</p>
+                <p>${("PG_"+perm.toUpperCase()+"_"+schema.toUpperCase()+"_"+database.toUpperCase()).replaceAll(" ","")}</p>
                 `
         })    
     })
