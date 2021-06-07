@@ -18,7 +18,6 @@ function outputHandler(database, perms, schemas){
     let screen = document.getElementById("screen")
     screen.innerHTML = ""
     schemas.forEach(schema => {
-        console.log(schema)
         if(schema != "") schema = "_"+schema.toUpperCase();
         perms.forEach(perm => {
             screen.innerHTML += 
