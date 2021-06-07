@@ -18,10 +18,12 @@ function outputHandler(database, perms, schemas){
     let screen = document.getElementById("screen")
     screen.innerHTML = ""
     schemas.forEach(schema => {
+        console.log(schema)
+        if(schema != "") schema = "_"+schema.toUpperCase();
         perms.forEach(perm => {
             screen.innerHTML += 
                 `
-                <p>${("PG_"+perm.toUpperCase()+"_"+schema.toUpperCase()+"_"+database.toUpperCase()).replaceAll(" ","")}</p>
+                <p>${("PG_"+perm.toUpperCase()+schema+"_"+database.toUpperCase()).replaceAll(" ","")}</p>
                 `
         })    
     })
